@@ -63,7 +63,7 @@
 				                        <td><%=item.getId() %></td>
 				                        <td><%=item.getProvenienza() %></td>
 				                        <td><%=item.getDestinazione() %></td>
-				                        <td><%=item.getPrezzo() %></td>
+				                        <td><%=item.getPrezzo() + "$"%></td>
 				                        <td><%=item.getData()!=null? new SimpleDateFormat("dd/MM/yyyy").format(item.getData()):"N.D."%></td>
 				                        <td>
 											<a class="btn  btn-sm btn-outline-secondary" href="ExecuteVisualizzaBigliettoServlet?idBiglietto=<%=item.getId() %>">Visualizza</a>

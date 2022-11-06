@@ -7,7 +7,7 @@
 		<!-- Custom styles per le features di bootstrap 'Columns with icons' -->
 	   <link href="./assets/css/features.css" rel="stylesheet">
 	   
-	   <title>Gestione Biglietti</title>
+	   <title>Gestione Biglietti Sava's Airlines</title>
 	 </head>
 	   <body class="d-flex flex-column h-100">
 	   		
@@ -48,11 +48,11 @@
 				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
 				</div>	
 						    
-			     <div class="p-5 mb-4 bg-light rounded-3">		     			     
+			     <div class="p-5 mb-4 bg-warning rounded-3">		     			     
 				      <div class="container-fluid py-5">
 				      	
-				        <h1 class="display-5 fw-bold">Benvenuto alla Gestione Biglietto</h1>
-				        <p class="col-md-8 fs-4">Utilizza una serie di funzioni che ti permettono di gestire il tuo biglietto </p>
+				        <h1 class="display-5 fw-bold">Benvenuto alla Gestione Biglietto di Sava's Airlines</h1>
+				        <p class="col-md-8 fs-4">Benvenuti da Sava's Airlines, nel sito e possibile trovare tutte le tratte aeree del mondo</p>
 				        <a class="btn btn-outline-dark btn-lg" href="ListBigliettiServlet">Lista Biglietti</a>
 				         <a class="btn btn-outline-dark btn-lg" href="PrepareInsertBigliettoServlet">Inserisci Biglietto</a>
 				      </div>
@@ -65,12 +65,14 @@
 			    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
 			      <div class="feature col">
 			        <div class="feature-icon bg-dark bg-gradient">
-			          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
+			         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+ 						 <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+					</svg>
 			        </div>
 			        <h2>Lista Biglietti</h2>
 			        <p>Visualizza tutti i biglietti premendo sul link qui sotto. </p>
 			        <a href="ListBigliettiServlet" class="icon-link">
-			          Vai alla funzionalità
+			          Vai alla visualizzazione di tutti i biglietti
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>
@@ -83,18 +85,20 @@
 			        <h2>Inserisci Nuovo Biglietto</h2>
 			        <p>inserisci un nuovo biglietto cliccando il link qui sotto.</p>
 			        <a href="PrepareInsertBigliettoServlet" class="icon-link">
-			          Vai alla funzionalità
+			          Vai all'inserimento del biglietto
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>
 			      <div class="feature col">
-			        <div class="feature-icon bg-info bg-gradient">
-			          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
+			        <div class="feature-icon bg-danger bg-gradient">
+			         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+  						<path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+					</svg>
 			        </div>
-			        <h2>Altra Funzione</h2>
-			        <p>(IN UPGRADE) Tra poco saranno implementate nuove funzionalita che permetteranno di fare cose nuove resta connesso per rimanere aggiornato.</p>
-			        <a href="#" class="icon-link">
-			          Vai alla funzionalità
+			        <h2>Delete</h2>
+			        <p>Elimina un biglietto	inserito</p>
+			        <a href="ListBigliettiServlet" class="icon-link">
+			          Vai all'eliminazione del biglietto
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>

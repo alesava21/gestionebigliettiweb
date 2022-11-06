@@ -39,7 +39,7 @@
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Prezzo:</dt>
-							  <dd class="col-sm-9"><%=bigliettoInPagina.getPrezzo() %></dd>
+							  <dd class="col-sm-9"><%=bigliettoInPagina.getPrezzo() + "$" %></dd>
 					    	</dl>
 					    	
 					    	<dl class="row">

@@ -21,7 +21,7 @@
 			  
 			  		<div class='card'>
 					    <div class='card-header'>
-					        <h5>Sicuro di voler eliminare questo biglietto?</h5>
+					        <h5>Riepilogo Eliminazione</h5>
 					    </div>
 					     <% Biglietto bigliettoInPagina = (Biglietto)request.getAttribute("bigliettoDaEliminare"); %>
 					    
@@ -44,7 +44,7 @@
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Prezzo:</dt>
-							  <dd class="col-sm-9"><%=bigliettoInPagina.getPrezzo() %></dd>
+							  <dd class="col-sm-9"><%=bigliettoInPagina.getPrezzo() + "$" %></dd>
 					    	</dl>
 					    	
 					    </div>
