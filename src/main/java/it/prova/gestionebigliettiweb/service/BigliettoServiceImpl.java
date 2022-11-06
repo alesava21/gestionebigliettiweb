@@ -37,8 +37,21 @@ public class BigliettoServiceImpl implements BigliettoService{
 
 	@Override
 	public Biglietto caricaSingoloElemento(Long idInput) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		EntityManager entityManager = LocalEntityManagerFactoryListener.getEntityManager();
+
+		try {
+			// uso l'injection per il dao
+			bigliettoDAO.setEntityManager(entityManager);
+
+			// eseguo quello che realmente devo fare
+			return bigliettoDAO.findOne(idInput);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw e;
+		} finally {
+			LocalEntityManagerFactoryListener.closeEntityManager(entityManager);
+		}
 	}
 
 	@Override
@@ -49,7 +62,23 @@ public class BigliettoServiceImpl implements BigliettoService{
 
 	@Override
 	public void inserisciNuovo(Biglietto input) throws Exception {
-		// TODO Auto-generated method stub
+		EntityManager entityManager = LocalEntityManagerFactoryListener.getEntityManager();
+		
+		try {
+			entityManager.getTransaction().begin();
+			
+			bigliettoDAO.setEntityManager(entityManager);
+			
+			bigliettoDAO.insert(input);
+			
+			entityManager.getTransaction().commit();
+		} catch (Exception e) {
+			entityManager.getTransaction().rollback();
+			e.printStackTrace();
+			throw e;
+		}finally {
+			LocalEntityManagerFactoryListener.closeEntityManager(entityManager);
+		}
 		
 	}
 

@@ -46,51 +46,51 @@
 			  	<div class="alert alert-danger alert-dismissible fade show ${errorMessage==null?'d-none':'' }" role="alert">
 				  ${errorMessage}
 				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
-				</div>
-			    
-			     <div class="p-5 mb-4 bg-light rounded-3">
-				      <div class="container-fluid py-5">
+				</div>			    
+			     <div class="p-5 mb-4 bg-light rounded-3">			     
+				      <div class="container-fluid py-5">				     
 				        <h1 class="display-5 fw-bold">Benvenuto alla Gestione Biglietto</h1>
 				        <p class="col-md-8 fs-4">Utilizza una serie di funzioni che ti permettono di gestire il tuo biglietto </p>
-				        <a class="btn btn-primary btn-lg" href="ListBigliettiServlet">Lista Biglietti</a>
+				        <a class="btn btn-outline-dark btn-lg" href="ListBigliettiServlet">Lista Biglietti</a>
+				         <a class="btn btn-outline-dark btn-lg" href="PrepareInsertBigliettoServlet">Inserisci Biglietto</a>
 				      </div>
+				     </div>
 			    </div>
 			    
-			  </div>
-			  
+			    			  
 			  <!--  features di bootstrap 'Columns with icons'  -->
 			  <div class="container px-4 py-5" id="featured-3">
 			    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
 			      <div class="feature col">
-			        <div class="feature-icon bg-primary bg-gradient">
+			        <div class="feature-icon bg-dark bg-gradient">
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
 			        </div>
 			        <h2>Lista Biglietti</h2>
-			        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+			        <p>Visualizza tutti i biglietti premendo sul link qui sotto. </p>
 			        <a href="ListBigliettiServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>
 			      <div class="feature col">
-			        <div class="feature-icon bg-primary bg-gradient">
-			        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
-  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
-</svg>
+			        <div class="feature-icon bg-success bg-gradient">
+			        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+ 					 <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
+					</svg>
 			        </div>
 			        <h2>Inserisci Nuovo Biglietto</h2>
-			        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+			        <p>inserisci un nuovo biglietto cliccando il link qui sotto.</p>
 			        <a href="PrepareInsertBigliettoServlet" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>
 			      <div class="feature col">
-			        <div class="feature-icon bg-primary bg-gradient">
+			        <div class="feature-icon bg-info bg-gradient">
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
 			        </div>
 			        <h2>Altra Funzione</h2>
-			        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+			        <p>(IN UPGRADE) Tra poco saranno implementate nuove funzionalita che permetteranno di fare cose nuove resta connesso per rimanere aggiornato.</p>
 			        <a href="#" class="icon-link">
 			          Vai alla funzionalità
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
