@@ -67,11 +67,11 @@
      						 </div>
 
       						<!-- Modal body -->
-     						 <div class="modal-body"> Confermi Di Voler Eliminare l'Articolo?</div>
+     						 <div class="modal-body"> Confermi Di Voler Eliminare il Biglietto?</div>
 
      						 <!-- Modal footer -->
       						<div class="modal-footer">
-        						 <button type="submit" class="btn btn-outline-danger">Delete</button>
+        						 <button type="submit" class="btn btn-outline-success">Coferma</button>
            							<input type="hidden" name="idDaInviareComeParametro" value="<%=bigliettoInPagina.getId() %>">	
      					 				</div>
     								</div>
