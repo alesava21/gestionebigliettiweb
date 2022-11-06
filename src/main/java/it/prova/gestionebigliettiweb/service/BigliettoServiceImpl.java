@@ -56,7 +56,23 @@ public class BigliettoServiceImpl implements BigliettoService{
 
 	@Override
 	public void aggiorna(Biglietto input) throws Exception {
-		// TODO Auto-generated method stub
+EntityManager entityManager = LocalEntityManagerFactoryListener.getEntityManager();
+		
+		try {
+			entityManager.getTransaction().begin();
+
+			bigliettoDAO.setEntityManager(entityManager);
+
+			bigliettoDAO.update(input);
+
+			entityManager.getTransaction().commit();
+		} catch (Exception e) {
+			entityManager.getTransaction().rollback();
+			e.printStackTrace();
+			throw e;
+		} finally {
+			LocalEntityManagerFactoryListener.closeEntityManager(entityManager);
+		}
 		
 	}
 
@@ -84,7 +100,23 @@ public class BigliettoServiceImpl implements BigliettoService{
 
 	@Override
 	public void rimuovi(Long idArticoloToRemove) throws Exception {
-		// TODO Auto-generated method stub
+		EntityManager entityManager = LocalEntityManagerFactoryListener.getEntityManager();
+
+		try {
+			entityManager.getTransaction().begin();
+
+			bigliettoDAO.setEntityManager(entityManager);
+
+			bigliettoDAO.delete(bigliettoDAO.findOne(idArticoloToRemove));
+
+			entityManager.getTransaction().commit();
+		} catch (Exception e) {
+			entityManager.getTransaction().rollback();
+			e.printStackTrace();
+			throw e;
+		} finally {
+			LocalEntityManagerFactoryListener.closeEntityManager(entityManager);
+		}
 		
 	}
 

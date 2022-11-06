@@ -46,9 +46,11 @@
 			  	<div class="alert alert-danger alert-dismissible fade show ${errorMessage==null?'d-none':'' }" role="alert">
 				  ${errorMessage}
 				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
-				</div>			    
-			     <div class="p-5 mb-4 bg-light rounded-3">			     
-				      <div class="container-fluid py-5">				     
+				</div>	
+						    
+			     <div class="p-5 mb-4 bg-light rounded-3">		     			     
+				      <div class="container-fluid py-5">
+				      	
 				        <h1 class="display-5 fw-bold">Benvenuto alla Gestione Biglietto</h1>
 				        <p class="col-md-8 fs-4">Utilizza una serie di funzioni che ti permettono di gestire il tuo biglietto </p>
 				        <a class="btn btn-outline-dark btn-lg" href="ListBigliettiServlet">Lista Biglietti</a>

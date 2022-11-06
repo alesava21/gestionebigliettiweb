@@ -11,37 +11,56 @@ import it.prova.gestionebigliettiweb.model.Biglietto;
 
 public class UtilityBigliettoForm {
 
-	public static Biglietto createBigliettoFromParams(String codiceInputParam, String descrizioneInputParam,
-			String prezzoInputStringParam, String dataArrivoStringParam) {
+	public static Biglietto createBigliettoFromParams(String DestinazioneInputParam, String provenienzaInputParam,
+			String prezzoInputStringParam, String dataStringParam) {
 
-		Biglietto result = new Biglietto(codiceInputParam, descrizioneInputParam);
-
+		Biglietto result = new Biglietto(DestinazioneInputParam,provenienzaInputParam);
+		
 		if (NumberUtils.isCreatable(prezzoInputStringParam)) {
 			result.setPrezzo(Integer.parseInt(prezzoInputStringParam));
 		}
-		result.setData(parseDateArrivoFromString(dataArrivoStringParam));
+		result.setData(parseDateFromString(dataStringParam));
 
 		return result;
 	}
+	
+	public static Biglietto createBigliettoFromParamsConId(String idParam, String provenienzaParam, String destinazioneParam,
+			String dataParam, String prezzoParam) {
+		Biglietto result = new Biglietto(provenienzaParam, destinazioneParam);
 
-	public static boolean validateBigliettoBean(Biglietto articoloToBeValidated) {
+		result.setData(parseDateFromString(dataParam));
+
+		if(NumberUtils.isCreatable(idParam)) {
+			result.setId(Long.parseLong(idParam));
+		}
+		
+		if (NumberUtils.isCreatable(prezzoParam)) {
+			result.setPrezzo(Integer.parseInt(prezzoParam));
+		}
+
+		return result;
+
+	}
+	
+
+	public static boolean validateBigliettoBean(Biglietto bigliettoToBeValidated) {
 		// prima controlliamo che non siano vuoti i parametri
-		if (StringUtils.isBlank(articoloToBeValidated.getDestinazione())
-				|| StringUtils.isBlank(articoloToBeValidated.getProvenienza())
-				|| articoloToBeValidated.getPrezzo() == null 
-				|| articoloToBeValidated.getPrezzo() < 1
-				|| articoloToBeValidated.getData() == null) {
+		if (StringUtils.isBlank(bigliettoToBeValidated.getDestinazione())
+				|| StringUtils.isBlank(bigliettoToBeValidated.getProvenienza())
+				|| bigliettoToBeValidated.getPrezzo() == null 
+				|| bigliettoToBeValidated.getPrezzo() < 1
+				|| bigliettoToBeValidated.getData() == null) {
 			return false;
 		}
 		return true;
 	}
 
-	public static Date parseDateArrivoFromString(String dataArrivoStringParam) {
-		if (StringUtils.isBlank(dataArrivoStringParam))
+	public static Date parseDateFromString(String dataStringParam) {
+		if (StringUtils.isBlank(dataStringParam))
 			return null;
 
 		try {
-			return new SimpleDateFormat("yyyy-MM-dd").parse(dataArrivoStringParam);
+			return new SimpleDateFormat("yyyy-MM-dd").parse(dataStringParam);
 		} catch (ParseException e) {
 			return null;
 		}
