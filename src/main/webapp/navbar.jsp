@@ -1,3 +1,4 @@
+	<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <header>
   <!-- Fixed navbar -->
  <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Eighth navbar example">
@@ -7,7 +8,7 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarsExample07">  
-      <img src="./assets/img/favicons/ff.png" class="rounded" alt="Cinque Terre">
+      <img src="${pageContext.request.contextPath}/assets/img/favicons/ff.png" class="rounded" alt="Cinque Terre">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         
           <li class="nav-item">
@@ -17,7 +18,11 @@
             <a class="nav-link" href="ListBigliettiServlet">Lista Biglietti</a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="${pageContext.request.contextPath}/admin/PrepareInsertBigliettoServlet">Inserisci Biglietto</a>
+           	<c:forEach items="${userInfo.ruoli}" var="item">
+			<c:if test="${item.codice == 'ADMIN_ROLE'}">
+			    <a class="nav-link" href="${pageContext.request.contextPath}/admin/PrepareInsertBigliettoServlet">Inserisci Biglietto</a>
+			</c:if>
+			</c:forEach>
           </li>
         </ul>
       </div>

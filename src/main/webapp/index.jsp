@@ -56,7 +56,11 @@
 				        <p class="col-md-8 fs-4">Benvenuti da Sava's Airlines, nel sito e possibile trovare tutte le tratte aeree del mondo</p>
 				        <a class="btn btn-outline-dark btn-lg" href="ListBigliettiServlet">Lista Biglietti</a>				        
 				        
-				         <a class="btn btn-outline-dark btn-lg"href="${pageContext.request.contextPath}/admin/PrepareInsertBigliettoServlet">Inserisci Biglietto</a>
+				        <c:forEach items="${userInfo.ruoli}" var="item">
+			     		 <c:if test="${item.codice == 'ADMIN_ROLE'}">
+			     		  <a class="btn btn-outline-dark btn-lg"href="${pageContext.request.contextPath}/admin/PrepareInsertBigliettoServlet">Inserisci Biglietto</a>
+			     		 </c:if>
+			     		 </c:forEach>
 				      </div>
 				     </div>
 			    </div>
@@ -78,7 +82,9 @@
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>
-			      <div class="feature col text-white">
+			      <c:forEach items="${userInfo.ruoli}" var="item">
+			      <c:if test="${item.codice == 'ADMIN_ROLE'}">
+			       <div class="feature col text-white">
 			        <div class="feature-icon bg-success bg-gradient">
 			        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
  					 <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
@@ -91,7 +97,11 @@
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>
-			      <div class="feature col text-white">
+			      </c:if>
+			      </c:forEach>
+			        <c:forEach items="${userInfo.ruoli}" var="item">
+			      <c:if test="${item.codice == 'ADMIN_ROLE'}">
+			       <div class="feature col text-white">
 			        <div class="feature-icon bg-danger bg-gradient">
 			         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
   						<path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
@@ -104,6 +114,8 @@
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>
+			      </c:if>
+			      </c:forEach>
 			    </div>
 			  </div>
 			  

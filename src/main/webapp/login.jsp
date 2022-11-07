@@ -7,9 +7,9 @@
 <title>Pagina di Accesso</title>
 
 <!-- Bootstrap -->
-<link href="<%= request.getContextPath() %>/css/bootstrap.min.css" rel="stylesheet" >
+<link href="<%= request.getContextPath() %>/assets/css/bootstrap.min.css" rel="stylesheet" >
 <!-- Custom styles for this template -->
-<link href="<%= request.getContextPath() %>/css/signin.css" rel="stylesheet" style="background-color: #050402">
+<link href="<%= request.getContextPath() %>/assets/css/signin.css" rel="stylesheet" style="background-color: #050402">
 </head>
 <body class="text-center">
 	<div class="container">
