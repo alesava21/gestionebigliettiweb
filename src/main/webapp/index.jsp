@@ -1,4 +1,5 @@
 	<!doctype html>
+	<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html lang="it" class="h-100" >
 	 <head>
 	 
@@ -53,8 +54,9 @@
 				      	
 				        <h1 class="display-5 fw-bold">Benvenuto alla Gestione Biglietto di Sava's Airlines</h1>
 				        <p class="col-md-8 fs-4">Benvenuti da Sava's Airlines, nel sito e possibile trovare tutte le tratte aeree del mondo</p>
-				        <a class="btn btn-outline-dark btn-lg" href="ListBigliettiServlet">Lista Biglietti</a>
-				         <a class="btn btn-outline-dark btn-lg" href="PrepareInsertBigliettoServlet">Inserisci Biglietto</a>
+				        <a class="btn btn-outline-dark btn-lg" href="ListBigliettiServlet">Lista Biglietti</a>				        
+				        
+				         <a class="btn btn-outline-dark btn-lg"href="${pageContext.request.contextPath}/admin/PrepareInsertBigliettoServlet">Inserisci Biglietto</a>
 				      </div>
 				     </div>
 			    </div>
@@ -84,7 +86,7 @@
 			        </div>
 			        <h2>Inserisci Nuovo Biglietto</h2>
 			        <p>inserisci un nuovo biglietto cliccando il link qui sotto.</p>
-			        <a href="PrepareInsertBigliettoServlet" class="icon-link">
+			        <a href="${pageContext.request.contextPath}/admin/PrepareInsertBigliettoServlet" class="icon-link">
 			          Vai all'inserimento del biglietto
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
@@ -97,7 +99,7 @@
 			        </div>
 			        <h2>Delete</h2>
 			        <p>Elimina un biglietto	inserito</p>
-			        <a href="ListBigliettiServlet" class="icon-link">
+			        <a href="${pageContext.request.contextPath}/admin/ListBigliettiServlet" class="icon-link">
 			          Vai all'eliminazione del biglietto
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>

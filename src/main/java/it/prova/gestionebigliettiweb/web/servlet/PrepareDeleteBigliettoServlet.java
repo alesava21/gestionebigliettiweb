@@ -11,7 +11,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 
 import it.prova.gestionebigliettiweb.service.MyServiceFactory;
 
-@WebServlet("/PrepareDeleteBigliettoServlet")
+@WebServlet("/admin/PrepareDeleteBigliettoServlet")
 public class PrepareDeleteBigliettoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

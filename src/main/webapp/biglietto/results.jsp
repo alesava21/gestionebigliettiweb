@@ -41,7 +41,7 @@
 				        <h5>Lista dei risultati</h5> 
 				    </div>
 				    <div class='card-body text-light'>
-				    	<a class="btn btn-outline-success" href="PrepareInsertBigliettoServlet"><font color="white">Add New</font></a>
+				    	<a class="btn btn-outline-success" href="/admin/PrepareInsertBigliettoServlet"><font color="white">Add New</font></a>
 				    
 				        <div class='table-responsive text-light'>
 				            <table class='table text-light	' >
@@ -69,8 +69,8 @@
 				                		
 				                		<td>
 				                			<a class="btn  btn-sm btn-outline-secondary" href="ExecuteVisualizzaBigliettoServlet?idBiglietto=<c:out value="${biglietto.id }"></c:out>">Visualizza</a>
-											<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="PrepareUpdateBigliettoServlet?idBiglietto=<c:out value="${biglietto.id }"></c:out>">Edit</a>
-											<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteBigliettoServlet?idBiglietto=<c:out value="${biglietto.id }"></c:out>">Delete</a>
+											<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="${pageContext.request.contextPath}/admin/PrepareUpdateBigliettoServlet?idBiglietto=<c:out value="${biglietto.id }"></c:out>">Edit</a>
+											<a class="btn btn-outline-danger btn-sm" href="${pageContext.request.contextPath}/admin/PrepareDeleteBigliettoServlet?idBiglietto=<c:out value="${biglietto.id }"></c:out>">Delete</a>
 				                		</td>
 				                	</tr>
 				                	</c:forEach>

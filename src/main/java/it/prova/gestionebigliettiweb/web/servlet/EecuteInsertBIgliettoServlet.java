@@ -11,7 +11,7 @@ import it.prova.gestionebigliettiweb.model.Biglietto;
 import it.prova.gestionebigliettiweb.service.MyServiceFactory;
 import it.prova.gestionebigliettiweb.utility.UtilityBigliettoForm;
 
-@WebServlet("/EecuteInsertBIgliettoServlet")
+@WebServlet("/admin/EecuteInsertBIgliettoServlet")
 public class EecuteInsertBIgliettoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
