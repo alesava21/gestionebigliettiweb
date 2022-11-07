@@ -41,7 +41,7 @@
 				        <h5>Lista dei risultati</h5> 
 				    </div>
 				    <div class='card-body text-light'>
-				    	<a class="btn btn-outline-success" href="/admin/PrepareInsertBigliettoServlet"><font color="white">Add New</font></a>
+				    	<a class="btn btn-outline-success" href="${pageContext.request.contextPath}/admin/PrepareInsertBigliettoServlet"><font color="white">Add New</font></a>
 				    
 				        <div class='table-responsive text-light'>
 				            <table class='table text-light	' >

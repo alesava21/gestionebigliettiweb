@@ -12,6 +12,8 @@ import it.prova.gestionebigliettiweb.model.Biglietto;
 @WebServlet("/admin/PrepareInsertBigliettoServlet")
 public class PrepareInsertBigliettoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	public PrepareInsertBigliettoServlet() {}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setAttribute("insert_biglietto_attr", new Biglietto());
