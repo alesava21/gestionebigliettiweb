@@ -1,6 +1,6 @@
 <!doctype html>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="it.prova.gestionebigliettiweb.model.Biglietto"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="it" class="h-100" >
 	 <head>
 	 
@@ -9,7 +9,7 @@
 	   
 	   <title>Eliminazione biglietto</title>
 	 </head>
-	   <body class="d-flex flex-column h-100">
+	   <body class="d-flex flex-column h-100" style="background-color: #050402">
 	   
 	   		<!-- Fixed navbar -->
 	   		<jsp:include page="../navbar.jsp"></jsp:include>
@@ -17,34 +17,32 @@
 			
 			<!-- Begin page content -->
 			<main class="flex-shrink-0">
-			  <div class="container">
+			  <div class="container" style="background-color: #050402">
 			  
-			  		<div class='card'>
-					    <div class='card-header'>
+			  		<div class='card text-light' style="background-color: #050402">
+					    <div class='card-header text-light' style="background-color: #050402">
 					        <h5>Riepilogo Eliminazione</h5>
-					    </div>
-					     <% Biglietto bigliettoInPagina = (Biglietto)request.getAttribute("bigliettoDaEliminare"); %>
-					    
+					    </div>					    
 					
-					    <div class='card-body'>
+					    <div class='card-body' style="background-color: #050402">
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Provenienza:</dt>
-							  <dd class="col-sm-9"><%=bigliettoInPagina.getProvenienza() %></dd>
+							  <dd class="col-sm-9">${bigliettoDaEliminare.provenienza}</dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Descrizione:</dt>
-							  <dd class="col-sm-9"><%=bigliettoInPagina.getDestinazione() %></dd>
+							  <dd class="col-sm-9">${bigliettoDaEliminare.destinazione}</dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Data:</dt>
-							  <dd class="col-sm-9"><%=bigliettoInPagina.getData()!=null? new SimpleDateFormat("dd/MM/yyyy").format(bigliettoInPagina.getData()):"N.D."  %></dd>
+							  <dd class="col-sm-9"><fmt:formatDate value="${bigliettoDaEliminare.data}" pattern="dd-MM-yyyy"/></dd>
 					    	</dl>
 					    	
 					    	<dl class="row">
 							  <dt class="col-sm-3 text-right">Prezzo:</dt>
-							  <dd class="col-sm-9"><%=bigliettoInPagina.getPrezzo() + "$" %></dd>
+							  <dd class="col-sm-9">${bigliettoDaEliminare.prezzo}</dd>
 					    	</dl>
 					    	
 					    </div>
@@ -56,14 +54,14 @@
 					         <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#myModal">Delete</button>
 
 							<!-- The Modal -->
-							<div class="modal" id="myModal">
-  								<div class="modal-dialog">
-   									 <div class="modal-content">
+							<div class="modal" style="background-color: #050402; border-color: #ffffff" id="myModal">
+  								<div class="modal-dialog" style="background-color: #050402; border-color: #fffff">
+   									 <div class="modal-content" style="background-color: #050402; border-color: #ffffff">
 
      						 <!-- Modal Header -->
      						 <div class="modal-header">
        							 <h4 class="modal-title">Conferma Eliminazione</h4>
-      								  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      								  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
      						 </div>
 
       						<!-- Modal body -->
@@ -72,7 +70,7 @@
      						 <!-- Modal footer -->
       						<div class="modal-footer">
         						 <button type="submit" class="btn btn-outline-success">Coferma</button>
-           							<input type="hidden" name="idDaInviareComeParametro" value="<%=bigliettoInPagina.getId() %>">	
+           							<input type="hidden" name="idDaInviareComeParametro" value="<c:out value="${bigliettoDaEliminare.id }"></c:out>">	
      					 				</div>
     								</div>
  								 </div>

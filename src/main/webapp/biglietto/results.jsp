@@ -1,7 +1,6 @@
-<%@page import="it.prova.gestionebigliettiweb.model.Biglietto"%>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.List"%>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 <html lang="it" class="h-100" >
 	 <head>
@@ -12,7 +11,7 @@
 	   <title>Lista Elementi</title>
 	 </head>
 	 
-	<body class="d-flex flex-column h-100">
+	<body class="d-flex flex-column h-100" style="background-color: #050402">
 	 
 		<!-- Fixed navbar -->
 		<jsp:include page="../navbar.jsp"></jsp:include>
@@ -37,15 +36,15 @@
 		  
 		  
 		  
-		  		<div class='card'>
+		  		<div class='card text-light' style="background-color: #050402">
 				    <div class='card-header'>
 				        <h5>Lista dei risultati</h5> 
 				    </div>
-				    <div class='card-body'>
-				    	<a class="btn btn-outline-success" href="PrepareInsertBigliettoServlet">Add New</a>
+				    <div class='card-body text-light'>
+				    	<a class="btn btn-outline-success" href="PrepareInsertBigliettoServlet"><font color="white">Add New</font></a>
 				    
-				        <div class='table-responsive'>
-				            <table class='table table-striped ' >
+				        <div class='table-responsive text-light'>
+				            <table class='table text-light	' >
 				                <thead>
 				                    <tr>
 			                         	<th>Id</th>
@@ -57,21 +56,25 @@
 				                    </tr>
 				                </thead>
 				                <tbody>
-				                	<% List<Biglietto> listaBiglietti = (List<Biglietto>)request.getAttribute("listaBigliettiAttribute");
-				                		for(Biglietto item:listaBiglietti){ %>
-				                    <tr >
-				                        <td><%=item.getId() %></td>
-				                        <td><%=item.getProvenienza() %></td>
-				                        <td><%=item.getDestinazione() %></td>
-				                        <td><%=item.getPrezzo() + "$"%></td>
-				                        <td><%=item.getData()!=null? new SimpleDateFormat("dd/MM/yyyy").format(item.getData()):"N.D."%></td>
-				                        <td>
-											<a class="btn  btn-sm btn-outline-secondary" href="ExecuteVisualizzaBigliettoServlet?idBiglietto=<%=item.getId() %>">Visualizza</a>
-											<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="PrepareUpdateBigliettoServlet?idBiglietto=<%=item.getId()%>">Edit</a>
-											<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteBigliettoServlet?idBiglietto=<%=item.getId()%>">Delete</a>
-										</td>
-				                    </tr>
-				                    <% } %>
+				                	
+				                	<c:forEach items="${listaBigliettiAttribute}" var="biglietto">
+				                	<fmt:formatDate value="${biglietto.data}" pattern="dd-MM-yyyy" var="dataParsed"/>
+				                	
+				                	<tr>
+				                		<td>${biglietto.id }</td>
+				                		<td>${biglietto.provenienza}</td>
+				                		<td>${biglietto.destinazione}</td>
+				                		<td>${biglietto.prezzo}</td>
+ 										<td>${dataParsed}</td>
+				                		
+				                		<td>
+				                			<a class="btn  btn-sm btn-outline-secondary" href="ExecuteVisualizzaBigliettoServlet?idBiglietto=<c:out value="${biglietto.id }"></c:out>">Visualizza</a>
+											<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="PrepareUpdateBigliettoServlet?idBiglietto=<c:out value="${biglietto.id }"></c:out>">Edit</a>
+											<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteBigliettoServlet?idBiglietto=<c:out value="${biglietto.id }"></c:out>">Delete</a>
+				                		</td>
+				                	</tr>
+				                	</c:forEach>
+				                	
 				                    
 				                </tbody>
 				            </table>

@@ -38,9 +38,6 @@ public class ExecuteUpdateBigliettoServlet extends HttpServlet {
 			try {
 				request.setAttribute("bigliettoDaAggiornare", MyServiceFactory.getBigliettoServiceInstance()
 						.caricaSingoloElemento(Long.parseLong(parametroIdBigliettoDaModificare)));
-			} catch (NumberFormatException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

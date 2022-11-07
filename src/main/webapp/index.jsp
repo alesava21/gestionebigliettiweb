@@ -9,7 +9,7 @@
 	   
 	   <title>Gestione Biglietti Sava's Airlines</title>
 	 </head>
-	   <body class="d-flex flex-column h-100">
+	   <body class="d-flex flex-column h-100" style="background-color: #050402">
 	   		
 	   		<!-- #####################################  -->
 	   		<!-- elementi grafici per le features in basso  -->
@@ -41,14 +41,14 @@
 			
 			<!-- Begin page content -->
 			<main class="flex-shrink-0">
-			  <div class="container">
+			  <div class="container" >
 			  
 			  	<div class="alert alert-danger alert-dismissible fade show ${errorMessage==null?'d-none':'' }" role="alert">
 				  ${errorMessage}
 				  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
 				</div>	
 						    
-			     <div class="p-5 mb-4 bg-warning rounded-3">		     			     
+			     <div class="p-5 mb-4 rounded-3" style="background-color: #9c80da">		     			     
 				      <div class="container-fluid py-5">
 				      	
 				        <h1 class="display-5 fw-bold">Benvenuto alla Gestione Biglietto di Sava's Airlines</h1>
@@ -63,7 +63,7 @@
 			  <!--  features di bootstrap 'Columns with icons'  -->
 			  <div class="container px-4 py-5" id="featured-3">
 			    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-			      <div class="feature col">
+			      <div class="feature col text-white ">
 			        <div class="feature-icon bg-dark bg-gradient">
 			         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
  						 <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
@@ -76,7 +76,7 @@
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>
-			      <div class="feature col">
+			      <div class="feature col text-white">
 			        <div class="feature-icon bg-success bg-gradient">
 			        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">
  					 <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"/>
@@ -89,7 +89,7 @@
 			          <svg class="bi" width="1em" height="1em"><use xlink:href="#chevron-right"/></svg>
 			        </a>
 			      </div>
-			      <div class="feature col">
+			      <div class="feature col text-white">
 			        <div class="feature-icon bg-danger bg-gradient">
 			         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
   						<path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>

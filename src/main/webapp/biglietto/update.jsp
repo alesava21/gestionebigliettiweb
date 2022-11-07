@@ -1,6 +1,6 @@
 <!doctype html>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="it.prova.gestionebigliettiweb.model.Biglietto"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="it" class="h-100" >
 	 <head>
 	 
@@ -9,15 +9,15 @@
 	   
 	   <title>Aggiorna Biglietto</title>
 	 </head>
-	   <body class="d-flex flex-column h-100">
+	   <body class="d-flex flex-column h-100" style="background-color: #050402">
 	   
 	   		<!-- Fixed navbar -->
 	   		<jsp:include page="../navbar.jsp"></jsp:include>
 	    
 			
 			<!-- Begin page content -->
-			<main class="flex-shrink-0">
-			  <div class="container">
+			<main class="flex-shrink-0" style="background-color: #050402">
+			  <div class="container" style="background-color: #050402">
 			  
 			  		<div class="alert alert-danger alert-dismissible fade show ${errorMessage==null?'d-none':'' }" role="alert">
 					  ${errorMessage}
@@ -32,8 +32,8 @@
 					   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
 					</div>
 			  
-			  <div class='card'>
-				    <div class='card-header'>
+			  <div class='card text-light' style="background-color: #050402">
+				    <div class='card-header text-light' style="background-color: #050402">
 				        <h5>Modifica Biglietto</h5> 
 				    </div>
 				    <div class='card-body'>
@@ -42,36 +42,35 @@
 		
 		
 							<form method="post" action="ExecuteUpdateBigliettoServlet" class="row g-3" novalidate="novalidate">
-							
-								<% Biglietto bigliettoInPagina = (Biglietto)request.getAttribute("bigliettoDaAggiornare"); %>
-							
+														
 								<div class="col-md-6">
 									<label for="provenienza" class="form-label">Provenienza <span class="text-danger">*</span></label>
 									<input type="text" name="provenienza" id="provenienza" class="form-control" placeholder="Inserire la provenienza"  
-										value="<%=bigliettoInPagina.getProvenienza()!=null?bigliettoInPagina.getProvenienza():"" %>" required>
+										value="${bigliettoDaAggiornare.provenienza}" required>
 								</div>
 								
 								<div class="col-md-6">
 									<label for="destinazione" class="form-label">Destinazione <span class="text-danger">*</span></label>
 									<input type="text" name="destinazione" id="destinazione" class="form-control" placeholder="Inserire la destinazione"  
-										value="<%=bigliettoInPagina.getDestinazione()!=null?bigliettoInPagina.getDestinazione():"" %>" required>
+										value="${bigliettoDaAggiornare.destinazione}" required>
 								</div>
 							
 							<div class="col-md-3">
 									<label for="data" class="form-label">Data <span class="text-danger">*</span></label>
+									<fmt:formatDate value="${bigliettoDaAggiornare.data}" pattern="yyyy-MM-dd" var="dataParsed"/>
 									<input class="form-control"  name="data" id="data" type="date" placeholder="dd/MM/yy" title="formato : gg/mm/aaaa" 
-										value="<%=bigliettoInPagina.getData()!=null? new SimpleDateFormat("yyyy-MM-dd").format(bigliettoInPagina.getData()):""  %>" required/>
+										value="${dataParsed}" required/>
 								</div>
 							
 								<div class="col-md-6">
 									<label for="prezzo" class="form-label">Prezzo <span class="text-danger">*</span></label>
 									<input type="number" class="form-control" name="prezzo" id="prezzo" placeholder="Inserire prezzo" 
-									value="<%=bigliettoInPagina.getPrezzo()!=null?bigliettoInPagina.getPrezzo():"" %>" required>
+										value="${bigliettoDaAggiornare.prezzo}" required>
 								</div>
 								
 							<div class="col-12">
 								<button type="submit" name="submit" value="submit" id="submit" class="btn btn-outline-primary">Conferma</button>
-								<input type="hidden" name="idDaInviareComeParametro" value="<%= bigliettoInPagina.getId() %>">
+								<input type="hidden" name="idDaInviareComeParametro" value="<c:out value="${bigliettoDaAggiornare.id }"></c:out>">
 							</div>
 		
 						</form>
