@@ -22,7 +22,7 @@
         </ul>
       </div>
       <div class="col-md-3 text-end">
-       <!-- <a  class="btn btn-dark" href="login.jsp">Login</a>-->
+        <a  class="btn btn-dark" href="login.jsp">Logout</a>
       </div>
     </div>
   </nav>
